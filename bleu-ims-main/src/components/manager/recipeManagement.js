@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import "../admin/recipeManagement.css";
+import "../manager/recipeManagement.css";
 import Sidebar from "../sidebar";
 import { FaChevronDown, FaBell, FaFolderOpen, FaEdit, FaArchive } from "react-icons/fa";
 import DataTable from "react-data-table-component";

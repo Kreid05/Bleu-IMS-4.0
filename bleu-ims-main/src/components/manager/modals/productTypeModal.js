@@ -166,17 +166,18 @@ const ProductTypeModal = ({ onClose }) => {
         {
             name: "Size Required",
             selector: (row) => (row.SizeRequired ? "Yes" : "No"), 
+            center: true,
             width: "20%"
         },
         {
             name: "Actions",
             cell: (row) => (
-                <>
-                    <button onClick={() => handleEdit(row)} className="icon-button"><FaEdit /></button>
-                    <button onClick={() => handleDelete(row.productTypeID)} className="icon-button"><FaArchive /></button>
-                </>
+                <div className="productType-action-buttons">
+                    <button className="productType-action-button edit" title="Edit Product" onClick={() => handleEdit(row)}><FaEdit /></button>
+                    <button className="productType-action-button delete" title="Delete Product" onClick={() => handleDelete(row.ProductID)}><FaArchive /></button>
+                </div>
             ),
-            width: "35%",
+            width: "30%",
             center: true,
             ignoreRowClick: true,
         },
@@ -185,9 +186,12 @@ const ProductTypeModal = ({ onClose }) => {
     return (
         <div className="modal-overlay">
             <div className="modal-content">
-                <h2>Manage Product Types</h2>
-
-                <button onClick={() => setShowAddFormModal(true)} className="button-primary">Add Product Type</button>
+                <div className="modal-header">
+                    <h2>Manage Product Types</h2>
+                    <div className="button-container-right">
+                        <button onClick={() => setShowAddFormModal(true)} className="button-primary">Add Product Type</button>
+                    </div>
+                </div>
 
                 <DataTable 
                     columns={columns} 
@@ -233,9 +237,9 @@ const ProductTypeModal = ({ onClose }) => {
                                 />
                                 <label htmlFor="sizeRequired">Size Required?</label>
                             </div>
-                            <div className="modal-actions">
-                                <button onClick={handleAddType} className="button-primary">Add</button>
-                                <button onClick={() => setShowAddFormModal(false)} className="button-secondary">Cancel</button>
+                            <div className="newProductType-modal-actions">
+                                <button onClick={handleAddType} className="newProductType-button-primary">Add</button>
+                                <button onClick={() => setShowAddFormModal(false)} className="newProductType-button-secondary">Cancel</button>
                             </div>
                         </div>
                     </div>

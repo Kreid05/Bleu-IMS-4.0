@@ -39,7 +39,7 @@ function Login() {
         const userRole = decodedToken.role;
 
         if (userRole === 'admin') {
-          navigate("/admin/dashboard");
+          navigate("/manager/dashboard");
         } else if (userRole === 'manager') {
           navigate("/manager-home");
         } else if (userRole === 'manager') {

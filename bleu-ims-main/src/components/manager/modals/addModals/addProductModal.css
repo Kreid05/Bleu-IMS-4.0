@@ -74,7 +74,7 @@
 .addProduct-submit-button {
     width: 30%;
     padding: 10px;
-    background-color: #4B929D;
+    background-color: #007bff;
     color: white;
     font-weight: bold;
     border: none;
@@ -84,7 +84,7 @@
 }
 
 .addProduct-submit-button:hover {
-    background-color: #3c7c86;
+    background-color: #0050a5;
 }
 
 .addProduct-required-asterisk {

@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+    z-index: 1000;  
 }
 
 /* Modal content container */
@@ -19,9 +19,24 @@
     border-radius: 10px;
     width: 750px;
     max-width: 90%;
-    text-align: center;
+    text-align: left;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.3s ease;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-right: 2rem;
+    gap: 1rem;
+}
+
+.modal-header h2 {
+    color: #4B929D;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 /* Add/Edit form modal */
@@ -51,16 +66,17 @@
 /* Buttons */
 .button-primary {
     padding: 10px 20px;
-    background-color: #4B929D;
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin: 0.3rem;
+    margin-bottom: 1rem;
 }
 
 .button-primary:hover {
-    background-color: #3a747d;
+    background-color: #0050a5;
 }
 
 .button-secondary {
@@ -78,23 +94,38 @@
 }
 
 /* Action icon buttons */
-.icon-button {
-    background: none;
+
+.productType-action-buttons button {
+    margin-right: 8px;
+    padding: 8px 12px;
     border: none;
-    color: #4B929D;
-    font-size: 1.2rem;
-    margin: 0 0.3rem;
+    border-radius: 4px;
     cursor: pointer;
+    color: white;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
 }
 
-.icon-button:hover {
-    color: #3a747d;
+.productType-action-button.edit {
+    background-color: #007bff; /* Blue */
+}
+
+.productType-action-button.delete {
+    background-color: #dc3545; /* Red */
+}
+
+.productType-action-buttons button:hover {
+    opacity: 0.85;
 }
 
 /* Modal actions */
 .modal-actions {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
     margin-top: 1rem;
 }
@@ -112,4 +143,42 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
+}
+
+.newProductType-modal-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.newProductType-button-primary {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+.newProductType-button-primary:hover {
+    background-color: #0050a5;
+}
+
+.newProductType-button-secondary {
+    padding: 10px 20px;
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0.3rem;
+}
+
+.newProductType-button-secondary:hover {
+    background-color: #aaa;
 }

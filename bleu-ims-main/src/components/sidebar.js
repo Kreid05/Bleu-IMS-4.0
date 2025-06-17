@@ -28,22 +28,22 @@ function SidebarComponent() {
           <Menu>
             <MenuItem
               icon={<FontAwesomeIcon icon={faHome} />}
-              component={<Link to="/admin/dashboard" />}
-              active={location.pathname === '/admin/dashboard'}
+              component={<Link to="/manager/dashboard" />}
+              active={location.pathname === '/manager/dashboard'}
             >
               Dashboard
             </MenuItem>
             <MenuItem
               icon={<FontAwesomeIcon icon={faBox} />}
-              component={<Link to="/admin/products" />}
-              active={location.pathname === '/admin/products'}
+              component={<Link to="/manager/products" />}
+              active={location.pathname === '/manager/products'}
             >
               Product Management
             </MenuItem>
             <MenuItem
               icon={<FontAwesomeIcon icon={faUtensils} />}
-              component={<Link to="/admin/recipeManagement" />}
-              active={location.pathname === '/admin/recipeManagement'}
+              component={<Link to="/manager/recipeManagement" />}
+              active={location.pathname === '/manager/recipeManagement'}
             >
               Recipe Management
             </MenuItem>
@@ -51,22 +51,22 @@ function SidebarComponent() {
             {!collapsed && <div className="section-title">STOCKS</div>}
             <MenuItem
               icon={<FontAwesomeIcon icon={faCarrot} />}
-              component={<Link to="/admin/ingredients" />}
-              active={location.pathname === '/admin/ingredients'}
+              component={<Link to="/manager/ingredients" />}
+              active={location.pathname === '/manager/ingredients'}
             >
               Ingredients
             </MenuItem>
             <MenuItem
               icon={<FontAwesomeIcon icon={faTruck} />}
-              component={<Link to="/admin/supplies" />}
-              active={location.pathname === '/admin/supplies'}
+              component={<Link to="/manager/supplies" />}
+              active={location.pathname === '/manager/supplies'}
             >
               Supplies & Materials
             </MenuItem>
             <MenuItem
               icon={<FontAwesomeIcon icon={faTshirt} />}
-              component={<Link to="/admin/merchandise" />}
-              active={location.pathname === '/admin/merchandise'}
+              component={<Link to="/manager/merchandise" />}
+              active={location.pathname === '/manager/merchandise'}
             >
               Merchandise
             </MenuItem>

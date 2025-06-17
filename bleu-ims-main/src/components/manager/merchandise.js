@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import "../admin/merchandise.css"; 
+import "../manager/merchandise.css"; 
 import Sidebar from "../sidebar";
 import { FaChevronDown, FaFolderOpen, FaEdit, FaArchive } from "react-icons/fa";
 import DataTable from "react-data-table-component";
