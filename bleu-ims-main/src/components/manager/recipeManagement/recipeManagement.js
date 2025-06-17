@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import "../manager/recipeManagement.css";
-import Sidebar from "../sidebar";
+import "./recipeManagement.css";
+import Sidebar from "../../sidebar";
 import { FaChevronDown, FaBell, FaFolderOpen, FaEdit, FaArchive } from "react-icons/fa";
 import DataTable from "react-data-table-component";
-import AddRecipeModal from "./modals/addModals/addRecipeModal";
-import EditRecipeModal from "./modals/editModals/editRecipeModal";
-import ViewRecipeModal from "./modals/viewModals/viewRecipeModal";
+import AddRecipeModal from "./modals/addRecipeModal";
+import EditRecipeModal from "./modals/editRecipeModal";
+import ViewRecipeModal from "./modals/viewRecipeModal";
+import Header from "../../header";
 
 const API_BASE_URL = "http://127.0.0.1:8005";
 const getAuthToken = () => localStorage.getItem("access_token");
@@ -165,30 +166,8 @@ function RecipeManagement() {
         <div className="recipeManagement">
             <Sidebar />
             <div className="roles">
-                <header className="header">
-                    <div className="header-left">
-                        <h2 className="page-title">Recipe Management</h2>
-                    </div>
-                    <div className="header-right">
-                        <div className="header-date">{currentDate}</div>
-                        <div className="header-profile">
-                            <div className="profile-pic" style={{ backgroundImage: `url(${DEFAULT_PROFILE_IMAGE})` }}></div>
-                            <div className="profile-info">
-                                <div className="profile-role">Hi! I'm {loggedInUserDisplay.role}</div>
-                                <div className="profile-name">{loggedInUserDisplay.name}</div>
-                            </div>
-                            <div className="dropdown-icon" onClick={() => setDropdownOpen(!isDropdownOpen)}><FaChevronDown /></div>
-                            {isDropdownOpen && (
-                                <div className="profile-dropdown">
-                                    <ul>
-                                        <li>Edit Profile</li>
-                                        <li onClick={handleLogout}>Logout</li>
-                                    </ul>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                </header>
+
+                <Header pageTitle="Recipe Management" />
 
                 <div className="recipeManagement-header">
                     <div className="recipe-top-row">

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import "../manager/merchandise.css"; 
-import Sidebar from "../sidebar";
+import "./merchandise.css"; 
+import Sidebar from "../../sidebar";
 import { FaChevronDown, FaFolderOpen, FaEdit, FaArchive } from "react-icons/fa";
 import DataTable from "react-data-table-component";
-import AddMerchandiseModal from './modals/addModals/addMerchandiseModal';
-import EditMerchandiseModal from "./modals/editModals/editMerchandiseModal";
-import ViewMerchandiseModal from "./modals/viewModals/viewMerchandiseModal";
+import AddMerchandiseModal from './modals/addMerchandiseModal';
+import EditMerchandiseModal from "./modals/editMerchandiseModal";
+import ViewMerchandiseModal from "./modals/viewMerchandiseModal";
+import Header from "../../header";
 
 const API_BASE_URL = "http://127.0.0.1:8004";
 const getAuthToken = () => localStorage.getItem("access_token");
@@ -186,30 +187,8 @@ function Merchandise() {
         <div className="merchandise">
             <Sidebar />
             <div className="roles">
-                <header className="header">
-                    <div className="header-left">
-                        <h2 className="page-title">Merchandise</h2>
-                    </div>
-                    <div className="header-right">
-                        <div className="header-date">{currentDate}</div>
-                        <div className="header-profile">
-                            <div className="profile-pic"style={{ backgroundImage: `url(${DEFAULT_PROFILE_IMAGE})` }}></div>
-                            <div className="profile-info">
-                                <div className="profile-role">Hi! I'm {loggedInUserDisplay.role}</div>
-                                <div className="profile-name">{loggedInUserDisplay.name}</div>
-                            </div>
-                            <div className="dropdown-icon" onClick={toggleDropdown}><FaChevronDown /></div>
-                            {isDropdownOpen && (
-                                <div className="profile-dropdown">
-                                    <ul>
-                                        <li>Edit Profile</li>
-                                        <li onClick={handleLogout}>Logout</li>
-                                    </ul>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                </header>
+
+                <Header pageTitle="Merchandise" />
 
                 <div className="merch-header">
                     <div className="merch-bottom-row">

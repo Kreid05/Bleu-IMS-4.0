@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./dashboard.css"; 
-import Sidebar from "../sidebar"; 
+import Sidebar from "../../sidebar"; 
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
   AreaChart, Area
@@ -15,6 +15,7 @@ import {
   faArrowTrendDown
 } from '@fortawesome/free-solid-svg-icons';
 import { FaChevronDown, FaBell } from "react-icons/fa";
+import Header from "../../header";
 
 const revenueData = [
   { name: 'Jan', income: 5000, expense: 3000 },
@@ -129,46 +130,8 @@ const Dashboard = () => {
     <div className="dashboard">
       <Sidebar />
       <main className="dashboard-main">
-        <header className="header">
-          <div className="header-left">
-            <h2 className="page-title">Dashboard</h2>
-          </div>
 
-          <div className="header-right">
-            <div className="header-date">
-              {currentDate.toLocaleString("en-US", {
-                weekday: "long",
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-                hour: "numeric",
-                minute: "numeric",
-                second: "numeric",
-              })}
-            </div>
-            <div className="header-profile">
-              <div className="profile-pic" />
-              <div className="profile-info">
-                <div className="profile-role">Hi! I'm {userRole}</div>
-                <div className="profile-name">{userName}</div>
-              </div>
-              <div className="dropdown-icon" onClick={toggleDropdown}>
-                <FaChevronDown />
-              </div>
-              <div className="bell-icon">
-                <FaBell className="bell-outline" />
-              </div>
-              {isDropdownOpen && (
-                <div className="profile-dropdown">
-                  <ul>
-                    <li>Edit Profile</li>
-                    <li>Logout</li>
-                  </ul>
-                </div>
-              )}
-            </div>
-          </div>
-        </header>
+        <Header pageTitle="Dashboard" />
 
         <div className="dashboard-contents">
           <div className="dashboard-cards">

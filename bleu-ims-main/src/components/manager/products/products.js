@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from 'react-router-dom';
-import "../manager/products.css"; 
-import Sidebar from "../sidebar"; 
+import "./products.css"; 
+import Sidebar from "../../sidebar"; 
 import { FaChevronDown, FaFolderOpen, FaEdit, FaArchive, FaPlusSquare } from "react-icons/fa";
 import DataTable from "react-data-table-component";
-import ProductTypeModal from './modals/productTypeModal';
-import AddProductModal from './modals/addModals/addProductModal';
-import EditProductModal from './modals/editModals/editProductModal';
-import ViewProductModal from './modals/viewModals/viewProductModal';
-import AddSizeModal from './modals/addModals/addSizeModal';
+import ProductTypeModal from './productType';
+import AddProductModal from './modals/addProductModal';
+import EditProductModal from './modals/editProductModal';
+import ViewProductModal from './modals/viewProductModal';
+import AddSizeModal from './modals/addSizeModal';
+import Header from "../../header";
 
 const API_BASE_URL = "http://127.0.0.1:8001";
 const getAuthToken = () => localStorage.getItem("access_token");
@@ -248,29 +249,8 @@ function Products() {
     <div className="products">
       <Sidebar />
       <div className="roles">
-        <header className="header">
-          <div className="header-left">
-            <h2 className="page-title">Product Management</h2>
-          </div>
-          <div className="header-right">
-            <div className="header-date">{currentDate}</div>
-            <div className="header-profile">
-              <div className="profile-pic" />
-              <div className="profile-info">
-                <div className="profile-role">Hi! I'm {loggedInUserDisplay.role}</div>
-                <div className="profile-name">{loggedInUserDisplay.name}</div>
-              </div>
-              <div className="dropdown-icon" onClick={toggleDropdown} style={{ cursor: 'pointer' }}><FaChevronDown /></div>
-              {isDropdownOpen && (
-                <div className="profile-dropdown">
-                  <ul>
-                    <li onClick={handleLogout}>Logout</li>
-                  </ul>
-                </div>
-              )}
-            </div>
-          </div>
-        </header>
+
+        <Header pageTitle="Product Management" />
 
         <div className="product-header">
           <div className="product-top-row">

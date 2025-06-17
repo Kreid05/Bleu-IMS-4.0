@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./productTypeModal.css";
+import "./productType.css";
 import DataTable from "react-data-table-component";
 import { FaEdit, FaArchive } from "react-icons/fa";
 
